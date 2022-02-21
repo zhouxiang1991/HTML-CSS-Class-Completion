@@ -5,7 +5,7 @@ import IParseEngine from "../common/parse-engine";
 import ISimpleTextDocument from "../common/simple-text-document";
 
 class CssParseEngine implements IParseEngine {
-    public languageId = "css";
+    public languageId = "css,less";
     public extension = "css";
 
     public async parse(textDocument: ISimpleTextDocument): Promise<CssClassDefinition[]> {
