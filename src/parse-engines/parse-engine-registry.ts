@@ -4,7 +4,7 @@ import HtmlParseEngine from "./types/html-parse-engine";
 
 class ParseEngineRegistry {
     public static getParseEngine(languageId: string): IParseEngine {
-        const foundParseEngine = ParseEngineRegistry.registry.find((value) => value.languageId === languageId);
+        const foundParseEngine = ParseEngineRegistry.registry.find((value) => value.languageId.split(',').includes(languageId));
 
         if (!foundParseEngine) {
             throw new Error(`Could not find a parse engine for the provided language id ("${languageId}").`);
